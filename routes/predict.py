@@ -4,7 +4,7 @@ import json
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
-predict_router = APIRouter(tags=["Ducks"])
+predict_router = APIRouter(tags=["Predict"])
 
 with open("data.json", "r") as file:
     data = json.load(file)
