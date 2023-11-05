@@ -1,0 +1,44 @@
+{
+    "ducks": [
+        {
+            "id": 1,
+            "duck_name": "Bebek A",
+            "duck_type": "Peking",
+            "birthplace": "Kandang 1",
+            "birthdate": "2022-05-15",
+            "gender": "Betina",
+            "health_status": "Sehat",
+            "farm_id": 1
+        },
+        {
+            "id": 2,
+            "duck_name": "Bebek B",
+            "duck_type": "Bali",
+            "birthplace": "Kandang 2",
+            "birthdate": "2022-06-10",
+            "gender": "Jantan",
+            "health_status": "Cacat",
+            "farm_id": 2
+        }
+    ],
+    "farms": [
+        {
+            "id": 1,
+            "farm_name": "Peternakan ABC",
+            "farm_location": "Jl. Peternakan No. 123",
+            "number_of_barns": 4,
+            "total_capacity": 1000,
+            "owner_name": "John Doe",
+            "phone_number": "081234567890"
+        },
+        {
+            "id": 2,
+            "farm_name": "Peternakan XYZ",
+            "farm_location": "Jl. Peternakan No. 456",
+            "number_of_barns": 6,
+            "total_capacity": 1500,
+            "owner_name": "Jane Smith",
+            "phone_number": "081234567891"
+        }
+    ]
+}
