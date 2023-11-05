@@ -24,8 +24,12 @@ async def retrieve_duck(farm_id: int):
         predicted_years = np.arange(max_year + 1, max_year + 4).reshape(-1, 1)
         predicted_counts = model.predict(predicted_years)
 
-        for year, count in zip(predicted_years.flatten(), predicted_counts):
-            print(f"Year {year}: Predicted Population = {count:.2f}")
+        return dict(
+            zip(
+                predicted_years.flatten().tolist(),
+                np.floor(predicted_counts).astype(int).tolist(),
+            )
+        )
 
     ducks_count = {}
     for duck in ducks:
@@ -38,10 +42,9 @@ async def retrieve_duck(farm_id: int):
     if len(ducks_count) == 1:
         return {"message": "Not enough data to predict"}
     else:
-        predict_data(ducks_count)
         return {
-            f"message": "Predicted data for 3 years ahead",
-            "predicted_data": ducks_count,
+            "message": "Predicted data for 3 years ahead",
+            "predicted_data": predict_data(ducks_count),
         }
 
     raise HTTPException(
