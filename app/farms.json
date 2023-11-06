@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "farm_name": "Peternakan ABC",
+        "farm_location": "Jl. Peternakan No. 123",
+        "number_of_barns": 4,
+        "total_capacity": 1000,
+        "owner_name": "John Doe",
+        "phone_number": "081234567890"
+    },
+    {
+        "id": 2,
+        "farm_name": "Peternakan XYZ",
+        "farm_location": "Jl. Peternakan No. 456",
+        "number_of_barns": 6,
+        "total_capacity": 1500,
+        "owner_name": "Jane Smith",
+        "phone_number": "081234567891"
+    }
+]

@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "duck_name": "Bebek A",
+        "duck_type": "Peking",
+        "birthplace": "Jakarta, Indonesia",
+        "birthdate": "2021-05-15",
+        "gender": "Betina",
+        "health_status": "Sehat",
+        "farm_id": 1
+    },
+    {
+        "id": 2,
+        "duck_name": "Bebek B",
+        "duck_type": "Bali",
+        "birthplace": "Bogor, Indonesia",
+        "birthdate": "2021-06-10",
+        "gender": "Jantan",
+        "health_status": "Sehat",
+        "farm_id": 2
+    },
+    {
+        "id": 3,
+        "duck_name": "Bebek C",
+        "duck_type": "Peking",
+        "birthplace": "Jakarta, Indonesia",
+        "birthdate": "2021-05-15",
+        "gender": "Betina",
+        "health_status": "Sehat",
+        "farm_id": 1
+    },
+    {
+        "id": 4,
+        "duck_name": "Bebek D",
+        "duck_type": "Bali",
+        "birthplace": "Bogor, Indonesia",
+        "birthdate": "2021-06-10",
+        "gender": "Jantan",
+        "health_status": "Sehat",
+        "farm_id": 2
+    },
+    {
+        "id": 5,
+        "duck_name": "Bebek E",
+        "duck_type": "Peking",
+        "birthplace": "Jakarta, Indonesia",
+        "birthdate": "2020-05-15",
+        "gender": "Betina",
+        "health_status": "Sehat",
+        "farm_id": 1
+    },
+    {
+        "id": 6,
+        "duck_name": "Bebek F",
+        "duck_type": "Bali",
+        "birthplace": "Bogor, Indonesia",
+        "birthdate": "2020-06-10",
+        "gender": "Jantan",
+        "health_status": "Sakit",
+        "farm_id": 2
+    },
+    {
+        "id": 7,
+        "duck_name": "Bebek G",
+        "duck_type": "Peking",
+        "birthplace": "Jakarta, Indonesia",
+        "birthdate": "2020-05-15",
+        "gender": "Betina",
+        "health_status": "Sehat",
+        "farm_id": 1
+    },
+    {
+        "id": 8,
+        "duck_name": "Bebek H",
+        "duck_type": "Bali",
+        "birthplace": "Bogor, Indonesia",
+        "birthdate": "2020-06-10",
+        "gender": "Jantan",
+        "health_status": "Sehat",
+        "farm_id": 2
+    },
+    {
+        "id": 9,
+        "duck_name": "Bebek I",
+        "duck_type": "Peking",
+        "birthplace": "Jakarta, Indonesia",
+        "birthdate": "2019-05-15",
+        "gender": "Betina",
+        "health_status": "Sehat",
+        "farm_id": 1
+    },
+    {
+        "id": 10,
+        "duck_name": "Bebek J",
+        "duck_type": "Bali",
+        "birthplace": "Bogor, Indonesia",
+        "birthdate": "2019-06-10",
+        "gender": "Jantan",
+        "health_status": "Sehat",
+        "farm_id": 2
+    },
+    {
+        "id": 11,
+        "duck_name": "Bebek K",
+        "duck_type": "Peking",
+        "birthplace": "Jakarta, Indonesia",
+        "birthdate": "2019-05-15",
+        "gender": "Betina",
+        "health_status": "Sehat",
+        "farm_id": 1
+    },
+    {
+        "id": 12,
+        "duck_name": "Bebek L",
+        "duck_type": "Bali",
+        "birthplace": "Bogor, Indonesia",
+        "birthdate": "2019-06-10",
+        "gender": "Jantan",
+        "health_status": "Sehat",
+        "farm_id": 2
+    },
+    {
+        "id": 13,
+        "duck_name": "Bebek M",
+        "duck_type": "Peking",
+        "birthplace": "Jakarta, Indonesia",
+        "birthdate": "2018-05-15",
+        "gender": "Betina",
+        "health_status": "Sehat",
+        "farm_id": 1
+    },
+    {
+        "id": 14,
+        "duck_name": "Bebek N",
+        "duck_type": "Bali",
+        "birthplace": "Bogor, Indonesia",
+        "birthdate": "2018-06-10",
+        "gender": "Jantan",
+        "health_status": "Sehat",
+        "farm_id": 2
+    },
+    {
+        "id": 15,
+        "duck_name": "Bebek O",
+        "duck_type": "Peking",
+        "birthplace": "Jakarta, Indonesia",
+        "birthdate": "2018-05-15",
+        "gender": "Betina",
+        "health_status": "Sehat",
+        "farm_id": 1
+    },
+    {
+        "id": 16,
+        "duck_name": "Bebek P",
+        "duck_type": "Bali",
+        "birthplace": "Bogor, Indonesia",
+        "birthdate": "2018-06-10",
+        "gender": "Jantan",
+        "health_status": "Sehat",
+        "farm_id": 2
+    }
+]
