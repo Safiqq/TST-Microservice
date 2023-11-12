@@ -21,3 +21,7 @@ OR (docker it **locally**)
 
 * Use `black app/*.py app/models/*.py app/routes/*.py` to apply code formatter
 * Use `pylint app/*.py app/models/*.py app/routes/*.py` to rate the code lint
+
+Create a table: `alembic revision -m "create {table_name} table`
+Run migration: `alembic upgrade head`
+Delete mgration: `alembic downgrade base`
