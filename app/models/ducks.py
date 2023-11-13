@@ -1,34 +1,36 @@
-"""
-This module defines the Duck data model using Pydantic.
-The Duck class represents the attributes and structure of a duck, which includes its name, type,
-birthplace, birthdate, gender, health status, and the farm it belongs to.
-"""
-
 from datetime import date
 from pydantic import BaseModel
+from sqlalchemy import Column, Integer, String, DateTime
+from sqlalchemy.orm import declarative_base
+
+Base = declarative_base()
+
+
+class DuckDB(Base):
+    __tablename__ = "ducks"
+    id = Column(Integer, primary_key=True)
+    duck_name = Column(String(50), nullable=False)
+    duck_type = Column(String(50), nullable=False)
+    birthplace = Column(String(50), nullable=False)
+    birthdate = Column(DateTime, nullable=False)
+    gender = Column(String(6), nullable=False)
+    health_status = Column(String(5), nullable=False)
+    farm_id = Column(Integer, nullable=False)
+
+    def to_dict(self) -> dict:
+        return {
+            "id": self.id,
+            "duck_name": self.duck_name,
+            "duck_type": self.duck_type,
+            "birthplace": self.birthplace,
+            "birthdate": self.birthdate,
+            "gender": self.gender,
+            "health_status": self.health_status,
+            "farm_id": self.farm_id,
+        }
 
 
 class Duck(BaseModel):
-    """
-    Duck Model
-
-    Represents a duck with various attributes.
-
-    Attributes:
-        id (int): The unique identifier for the duck.
-        duck_name (str): The name of the duck.
-        duck_type (str): The type or breed of the duck.
-        birthplace (str): The place where the duck was born.
-        birthdate (date): The date of birth of the duck.
-        gender (str): The gender of the duck (e.g., "Male" or "Female").
-        health_status (str): The health status of the duck.
-        farm_id (int): The identifier of the farm where the duck is located.
-
-    Config:
-        json_schema_extra (dict): An example JSON object representing a duck.
-    """
-
-    id: int = None
     duck_name: str
     duck_type: str
     birthplace: str
@@ -37,17 +39,11 @@ class Duck(BaseModel):
     health_status: str
     farm_id: int
 
+    def to_db(self) -> DuckDB:
+        return DuckDB(**self.model_dump())
+
     # pylint: disable=too-few-public-methods
     class Config:
-        """
-        Duck Model Configuration
-
-        This class provides additional configuration options for the Duck model.
-
-        Attributes:
-            json_schema_extra (dict): A JSON object representing an example duck.
-        """
-
         json_schema_extra = {
             "example": {
                 "duck_name": "Bebek A",

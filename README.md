@@ -25,3 +25,8 @@ OR (docker it **locally**)
 Create a table: `alembic revision -m "create {table_name} table`
 Run migration: `alembic upgrade head`
 Delete mgration: `alembic downgrade base`
+
+1. python3 -m venv venv
+2. source venv/bin/activate
+3. pip install -r requirements.txt
+4. python3 app/main.py
