@@ -8,7 +8,7 @@ Create Date: 2023-11-12 15:57:27.098793
 from typing import Sequence, Union
 
 from alembic import op
-import sqlalchemy as sa
+from sqlalchemy import Column, Integer, String, DateTime
 
 
 # revision identifiers, used by Alembic.
@@ -21,20 +21,15 @@ depends_on: Union[str, Sequence[str], None] = None
 def upgrade() -> None:
     op.create_table(
         'ducks',
-        sa.Column('id', sa.Integer, primary_key=True),
-        sa.Column('duck_name', sa.String(50), nullable=False),
-        sa.Column('duck_type', sa.String(50), nullable=False),
-        sa.Column('birthplace', sa.String(50), nullable=False),
-        sa.Column('birthdate', sa.DateTime, nullable=False),
-        sa.Column('gender', sa.String(6), nullable=False),
-        sa.Column('health_status', sa.String(5), nullable=False),
-        sa.Column('farm_id', sa.Integer, nullable=False),
+        Column('id', Integer, primary_key=True),
+        Column('duck_name', String(50), nullable=False),
+        Column('duck_type', String(50), nullable=False),
+        Column('birthplace', String(50), nullable=False),
+        Column('birthdate', DateTime, nullable=False),
+        Column('gender', String(6), nullable=False),
+        Column('health_status', String(5), nullable=False),
+        Column('farm_id', Integer, nullable=False),
     )
-    # op.create_foreign_key(
-    #     'fk_ducks_farm_id_farms',
-    #     'ducks', 'farms',
-    #     ['farm_id'], ['id'],
-    # )
 
 
 def downgrade() -> None:

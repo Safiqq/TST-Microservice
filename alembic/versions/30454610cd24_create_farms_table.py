@@ -8,7 +8,7 @@ Create Date: 2023-11-12 15:57:31.314397
 from typing import Sequence, Union
 
 from alembic import op
-import sqlalchemy as sa
+from sqlalchemy import Column, Integer, String
 
 
 # revision identifiers, used by Alembic.
@@ -21,13 +21,13 @@ depends_on: Union[str, Sequence[str], None] = None
 def upgrade() -> None:
     op.create_table(
         'farms',
-        sa.Column('id', sa.Integer, primary_key=True),
-        sa.Column('farm_name', sa.String(50), nullable=False),
-        sa.Column('farm_location', sa.String(50), nullable=False),
-        sa.Column('number_of_barns', sa.Integer, nullable=False),
-        sa.Column('total_capacity', sa.Integer, nullable=False),
-        sa.Column('owner_name', sa.String(50), nullable=False),
-        sa.Column('phone_number', sa.String(16), nullable=False),
+        Column('id', Integer, primary_key=True),
+        Column('farm_name', String(50), nullable=False),
+        Column('farm_location', String(50), nullable=False),
+        Column('number_of_barns', Integer, nullable=False),
+        Column('total_capacity', Integer, nullable=False),
+        Column('owner_name', String(50), nullable=False),
+        Column('phone_number', String(16), nullable=False),
     )
 
 
