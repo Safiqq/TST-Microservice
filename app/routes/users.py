@@ -1,38 +1,64 @@
+"""
+This API provides functionalities for user management, including generating JWT tokens and user
+registration.
+"""
 from fastapi import APIRouter, HTTPException, status, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 from passlib.context import CryptContext
 
-import databases.users as db
-from auth.jwt import create_access_token, verify_token
-from models.users import User, Token
+import app.databases.user as db
+from app.auth.jwt import create_access_token
+from app.schemas.user import User
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 user_router = APIRouter(tags=["Users"])
 
 
-@user_router.post("/token", response_model=Token)
+@user_router.post("/token")
 async def generate_token(form_data: OAuth2PasswordRequestForm = Depends()):
+    """
+    Generates a JSON Web Token (JWT) for an existing user.
+
+    Args:
+        form_data: An OAuth2PasswordRequestForm object containing username and password.
+
+    Returns:
+        A dictionary containing the access token and token type.
+
+    Raises:
+        HTTPException 401: If the username or password is incorrect.
+    """
     user = db.get_user_by_username(form_data.username)
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Incorrect username or password",
         headers={"WWW-Authenticate": "Bearer"},
     )
-    print(0)
     if not user:
         raise credentials_exception
-    print(1)
     if not pwd_context.verify(form_data.password, user.get("password")):
         raise credentials_exception
-    print(2)
-    access_token = create_access_token({"sub": user.get("username")})
-    print(3)
+    access_token = create_access_token(
+        {"sub": user.get("username"), "admin": user.get("admin")}
+    )
     return {"access_token": access_token, "token_type": "bearer"}
 
 
 @user_router.post("/register")
 async def register(user_data: User):
+    """
+    Registers a new user.
+
+    Args:
+        user_data: A User object containing user information.
+
+    Returns:
+        A dictionary containing a success message.
+
+    Raises:
+        HTTPException 400: If a user with the same username already exists.
+    """
     user = db.get_user_by_username(user_data.username)
     if user:
         raise HTTPException(
