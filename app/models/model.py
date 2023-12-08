@@ -22,8 +22,7 @@ class LocationDB(Base):
     """
 
     __tablename__ = "location"
-    # id = mapped_column(sa.Integer, primary_key=True)
-    id = mapped_column(sa.UUID(as_uuid=True), primary_key=True, server_default="uuid_generate_v4()")
+    id = mapped_column(sa.Integer, primary_key=True)
     type = mapped_column(sa.Enum("farm", "market", "warehouse"), nullable=False)
     name = mapped_column(sa.String(100), nullable=False)
     address = mapped_column(sa.String(255), nullable=False)
@@ -65,7 +64,8 @@ class LivestockDB(Base):
     """
 
     __tablename__ = "livestock"
-    id = mapped_column(sa.Integer, primary_key=True)
+    # id = mapped_column(sa.Integer, primary_key=True)
+    id = mapped_column(sa.UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     name = mapped_column(sa.String(50), nullable=False)
     breed = mapped_column(sa.String(50), nullable=False)
     species = mapped_column(sa.String(50), nullable=False)
