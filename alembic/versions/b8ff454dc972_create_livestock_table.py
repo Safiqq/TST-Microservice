@@ -21,7 +21,8 @@ depends_on: Union[str, Sequence[str], None] = None
 def upgrade() -> None:
     op.create_table(
         'livestock',
-        sa.Column('id', sa.Integer, primary_key=True),
+        # sa.Column('id', sa.Integer, primary_key=True),
+        sa.Column('id', sa.UUID(as_uuid=True), primary_key=True, server_default=sa.text("uuid_generate_v4()")),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('breed', sa.String(50), nullable=False),
         sa.Column('species', sa.String(50), nullable=False),

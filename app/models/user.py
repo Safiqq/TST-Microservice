@@ -2,7 +2,7 @@
 This module defines the SQLAlchemy model used to manage user data within the application.
 """
 import sqlalchemy as sa
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import declarative_base, mapped_column
 
 Base = declarative_base()
 
@@ -20,10 +20,10 @@ class UserDB(Base):
     """
 
     __tablename__ = "user"
-    id = sa.Column(sa.Integer, primary_key=True)
-    username = sa.Column(sa.String(25), unique=True, nullable=False)
-    password = sa.Column(sa.String(255), nullable=False)
-    admin = sa.Column(sa.Boolean, default=False)
+    id = mapped_column(sa.Integer, primary_key=True)
+    username = mapped_column(sa.String(25), unique=True, nullable=False)
+    password = mapped_column(sa.String(255), nullable=False)
+    admin = mapped_column(sa.Boolean, default=False)
 
     def to_dict(self) -> dict:
         """

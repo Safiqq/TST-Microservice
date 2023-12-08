@@ -2,6 +2,7 @@
 This module defines the SQLAlchemy models used to manage location and livestock data within the
 application.
 """
+import uuid
 import sqlalchemy as sa
 from sqlalchemy.orm import declarative_base, relationship, mapped_column
 
@@ -21,7 +22,8 @@ class LocationDB(Base):
     """
 
     __tablename__ = "location"
-    id = mapped_column(sa.Integer, primary_key=True)
+    # id = mapped_column(sa.Integer, primary_key=True)
+    id = mapped_column(sa.UUID(as_uuid=True), primary_key=True, server_default="uuid_generate_v4()")
     type = mapped_column(sa.Enum("farm", "market", "warehouse"), nullable=False)
     name = mapped_column(sa.String(100), nullable=False)
     address = mapped_column(sa.String(255), nullable=False)
